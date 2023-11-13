@@ -3,4 +3,4 @@ import App from './App.vue';
 
 createApp(App).mount('#app');
 
-console.log('Hello Vue3!');
+// console.log('Hello Vue3!');
