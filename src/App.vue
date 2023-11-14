@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { provide, ref } from 'vue';
 import TheNav from './components/TheNav.vue';
 import TheView from './components/TheView.vue';
 export default {
@@ -15,6 +16,8 @@ export default {
 		TheView,
 	},
 	setup() {
+		const appMessage = ref('hello vue3 application!');
+		provide('appMessage', appMessage);
 		return {};
 	},
 };
