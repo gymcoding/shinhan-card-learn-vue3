@@ -15,6 +15,7 @@ module.exports = {
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'no-unused-vars': 'off',
 		'no-debugger': 'off',
+		'vue/multi-word-component-names': 'off',
 		'prettier/prettier': [
 			'error',
 			{

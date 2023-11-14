@@ -1,9 +1,7 @@
 <template>
 	<label>
-		<!-- :value="modelValue"
-    @input="event => $emit('update:modelValue', event.target.value)" -->
-		<input type="text" v-model="model" />
-		<button @click="addMessage">click</button>
+		{{ label }}
+		<input type="text" v-model="model" v-bind="$attrs" />
 	</label>
 </template>
 
@@ -12,6 +10,7 @@ import { computed, ref } from 'vue';
 export default {
 	props: ['modelValue', 'label'],
 	emits: ['update:modelValue'],
+	// inheritAttrs: false,
 	setup(props, context) {
 		const username = ref('');
 		const addMessage = () => {

@@ -15,13 +15,18 @@
 					</div>
 				</template>
 			</div>
-
-			<!-- v-model="username"  -->
-			<!-- :model-value="username"
-			@update:model-value="value => (username = value)" -->
-			<!-- :model-value="username" @update:model-value="value => (username = value)" -->
-			<LabelInput label="이름" v-model="username" />
-			<!-- {{ username }} -->
+			<!-- :firstname="firstname"
+			@update:firstname="value => (firstname = value)" -->
+			<Username v-model:firstname="firstname" v-model:lastname="lastname" />
+			<LabelInput
+				class="parent-class"
+				id="parent-id"
+				style="background: red"
+				data-id="hello"
+				label="우리가 정의한 것!!!"
+				label2="우리가 정의하지 않ㅇ느것!!!"
+				@click2="toggleLike"
+			/>
 		</div>
 	</main>
 </template>
@@ -31,10 +36,12 @@ import AppCard from '@/components/AppCard.vue';
 import { reactive, ref } from 'vue';
 import PostCreate from './PostCreate.vue';
 import LabelInput from './LabelInput.vue';
+import Username from './Username.vue';
 export default {
 	components: {
 		AppCard,
 		PostCreate,
+		Username,
 		LabelInput,
 	},
 	setup() {
@@ -104,7 +111,17 @@ export default {
 		};
 
 		const username = ref('홍길동');
-		return { post, posts, toggleLike, createPost, username };
+		const firstname = ref('홍');
+		const lastname = ref('길동');
+		return {
+			post,
+			posts,
+			toggleLike,
+			createPost,
+			username,
+			firstname,
+			lastname,
+		};
 	},
 };
 </script>
